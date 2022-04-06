@@ -15,6 +15,10 @@
 		A5BCDDC227FCD85D002E121F /* CurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCDDC127FCD85D002E121F /* CurrencyTests.swift */; };
 		A5BCDDCC27FCD85D002E121F /* CurrencyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCDDCB27FCD85D002E121F /* CurrencyUITests.swift */; };
 		A5BCDDCE27FCD85D002E121F /* CurrencyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCDDCD27FCD85D002E121F /* CurrencyUITestsLaunchTests.swift */; };
+		A5D5C98A27FD791B00F403DB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D5C98527FD791B00F403DB /* DetailViewController.swift */; };
+		A5D5C98B27FD791B00F403DB /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D5C98727FD791B00F403DB /* CurrencyViewController.swift */; };
+		A5D5C98C27FD791B00F403DB /* CurrencyViewController+PrivateMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D5C98827FD791B00F403DB /* CurrencyViewController+PrivateMethods.swift */; };
+		A5D5C98D27FD791B00F403DB /* CurrencyViewController+UIInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D5C98927FD791B00F403DB /* CurrencyViewController+UIInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		A5BCDDC727FCD85D002E121F /* CurrencyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurrencyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5BCDDCB27FCD85D002E121F /* CurrencyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyUITests.swift; sourceTree = "<group>"; };
 		A5BCDDCD27FCD85D002E121F /* CurrencyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A5D5C98527FD791B00F403DB /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A5D5C98727FD791B00F403DB /* CurrencyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
+		A5D5C98827FD791B00F403DB /* CurrencyViewController+PrivateMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CurrencyViewController+PrivateMethods.swift"; sourceTree = "<group>"; };
+		A5D5C98927FD791B00F403DB /* CurrencyViewController+UIInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CurrencyViewController+UIInteractor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,8 +168,28 @@
 		A5BCDDDE27FCDA34002E121F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A5D5C98627FD791B00F403DB /* Currency */,
+				A5D5C98427FD791B00F403DB /* DetailViewController */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A5D5C98427FD791B00F403DB /* DetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A5D5C98527FD791B00F403DB /* DetailViewController.swift */,
+			);
+			path = DetailViewController;
+			sourceTree = "<group>";
+		};
+		A5D5C98627FD791B00F403DB /* Currency */ = {
+			isa = PBXGroup;
+			children = (
+				A5D5C98727FD791B00F403DB /* CurrencyViewController.swift */,
+				A5D5C98827FD791B00F403DB /* CurrencyViewController+PrivateMethods.swift */,
+				A5D5C98927FD791B00F403DB /* CurrencyViewController+UIInteractor.swift */,
+			);
+			path = Currency;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,7 +323,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5D5C98A27FD791B00F403DB /* DetailViewController.swift in Sources */,
+				A5D5C98C27FD791B00F403DB /* CurrencyViewController+PrivateMethods.swift in Sources */,
+				A5D5C98B27FD791B00F403DB /* CurrencyViewController.swift in Sources */,
 				A5BCDDAB27FCD85C002E121F /* AppDelegate.swift in Sources */,
+				A5D5C98D27FD791B00F403DB /* CurrencyViewController+UIInteractor.swift in Sources */,
 				A5BCDDAD27FCD85C002E121F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
