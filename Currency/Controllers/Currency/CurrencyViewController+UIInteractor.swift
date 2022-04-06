@@ -39,7 +39,12 @@ extension CurrencyViewController {
     }
     
     private func handleSwapCurrencyClick() {
+        viewModel.swapCurrencies()
+        updateUIWithConvertedCurrency()
         
+        let swapButtonTitle = fromCurrencyButton.titleLabel?.text
+        fromCurrencyButton.setTitle(toCurrencyButton.titleLabel?.text, for: .normal)
+        toCurrencyButton.setTitle(swapButtonTitle, for: .normal)
     }
     
     private func handleDetailClick() {
@@ -70,7 +75,26 @@ extension CurrencyViewController {
             toCurrencyButton.setTitle(selectedCurrency, for: .normal)
         }
         if viewModel.currencyModel.fromCurrency != nil && viewModel.currencyModel.toCurrency != nil {
-            //call convert api
+            showLoader()
+            viewModel.getConvertedCurrency { [weak self] errorMessage in
+                guard let `self` = self else { return }
+                DispatchQueue.main.async {
+                    self.dismiss(animated: true)
+                    self.updateUIWithConvertedCurrency()
+                }
+            }
+        }
+    }
+    
+    private func updateUIWithConvertedCurrency() {
+        if (fromCurrencyTextField.text ?? "").isEmpty {
+            fromCurrencyTextField.text = "1"
+            
+            toCurrencyTextField.text = String(format: "%.2f", viewModel.convertedCurrencyRate ?? 0.0)
+        } else {
+            let convertedRate = viewModel.convertedCurrencyRate ?? 0.0
+            let amount = Double(fromCurrencyTextField.text ?? "") ?? 0.0
+            toCurrencyTextField.text = String(format: "%.2f", convertedRate * amount)
         }
     }
 }

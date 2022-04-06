@@ -28,6 +28,7 @@
 		A5D5C9A127FD829900F403DB /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D5C9A027FD829900F403DB /* AppConfiguration.swift */; };
 		A5D5C9A327FD875500F403DB /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D5C9A227FD875500F403DB /* UIViewController+Alert.swift */; };
 		A5D5C9A527FD878200F403DB /* CurrencyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D5C9A427FD878200F403DB /* CurrencyConstants.swift */; };
+		A5D5C9A727FDC09300F403DB /* CurrencyViewController+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D5C9A627FDC09300F403DB /* CurrencyViewController+UITextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		A5D5C9A027FD829900F403DB /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		A5D5C9A227FD875500F403DB /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		A5D5C9A427FD878200F403DB /* CurrencyConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConstants.swift; sourceTree = "<group>"; };
+		A5D5C9A627FDC09300F403DB /* CurrencyViewController+UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrencyViewController+UITextField.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +212,7 @@
 				A5D5C98727FD791B00F403DB /* CurrencyViewController.swift */,
 				A5D5C98827FD791B00F403DB /* CurrencyViewController+PrivateMethods.swift */,
 				A5D5C98927FD791B00F403DB /* CurrencyViewController+UIInteractor.swift */,
+				A5D5C9A627FDC09300F403DB /* CurrencyViewController+UITextField.swift */,
 			);
 			path = Currency;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				A5D5C99527FD7B4C00F403DB /* PickerView.swift in Sources */,
 				A5D5C9A127FD829900F403DB /* AppConfiguration.swift in Sources */,
 				A5D5C99F27FD81B900F403DB /* CurrencyModel.swift in Sources */,
+				A5D5C9A727FDC09300F403DB /* CurrencyViewController+UITextField.swift in Sources */,
 				A5D5C99427FD7B4C00F403DB /* ORDesinables.swift in Sources */,
 				A5D5C9A527FD878200F403DB /* CurrencyConstants.swift in Sources */,
 				A5D5C99C27FD7BAD00F403DB /* CurrenyViewModel.swift in Sources */,

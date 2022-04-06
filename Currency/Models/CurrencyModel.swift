@@ -22,3 +22,16 @@ struct CurrencyModel {
         symbolsList = symbols.map { $0.key }.sorted()
     }
 }
+
+struct CurrencyConvertModel {
+    
+    let rates: [String: Double]
+    
+    init() {
+        rates = [:]
+    }
+    
+    init(_ json: [String: Any]) {
+        rates = json["rates"] as? [String: Double] ?? [:]
+    }
+}
