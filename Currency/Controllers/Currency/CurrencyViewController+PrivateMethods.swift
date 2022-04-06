@@ -14,6 +14,14 @@ extension CurrencyViewController {
     }
     
     private func getCurrency() {
-        
+        showLoader()
+        viewModel.getCurrency { errorMessage in
+            DispatchQueue.main.async {
+                self.dismiss(animated: true)
+                if !errorMessage.isEmpty {
+                    self.alert(message: errorMessage)
+                }
+            }
+        }
     }
 }

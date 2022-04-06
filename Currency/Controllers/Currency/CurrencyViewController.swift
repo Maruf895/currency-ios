@@ -16,6 +16,8 @@ class CurrencyViewController: UIViewController {
     @IBOutlet weak var fromCurrencyTextField: UITextField!
     @IBOutlet weak var toCurrencyTextField: UITextField!
     
+    var viewModel = CurrenyViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -23,11 +23,19 @@ extension CurrencyViewController {
     }
     
     private func handleFromCurrencyClick() {
-        
+        var currencyList = viewModel.currencyModel.symbolsList
+        if let toCurrency = viewModel.currencyModel.toCurrency {
+            currencyList = viewModel.currencyModel.symbolsList.filter { $0 != toCurrency }
+        }
+        openPickerView(isFrom: true, currencyList: currencyList)
     }
     
     private func handleToCurrencyClick() {
-        
+        var currencyList = viewModel.currencyModel.symbolsList
+        if let fromCurrency = viewModel.currencyModel.fromCurrency {
+            currencyList = viewModel.currencyModel.symbolsList.filter { $0 != fromCurrency }
+        }
+        openPickerView(isFrom: false, currencyList: currencyList)
     }
     
     private func handleSwapCurrencyClick() {
@@ -38,5 +46,31 @@ extension CurrencyViewController {
         let controller = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         
         navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    private func openPickerView(isFrom: Bool, currencyList: [String]) {
+        guard !viewModel.currencyModel.symbolsList.isEmpty else {
+            alert(message: Alerts.currencyNotFound)
+            return
+        }
+        let selectedValue = isFrom ? viewModel.currencyModel.fromCurrency : viewModel.currencyModel.toCurrency
+        PickerView.shared.showPicker(currencyList, selectedValue: selectedValue) { [weak self] value in
+            guard let self = self, let selectedCurrency = value as? String else { return }
+            
+            self.handlePickerSelection(isFrom: isFrom, selectedCurrency: selectedCurrency)
+        }
+    }
+    
+    private func handlePickerSelection(isFrom: Bool, selectedCurrency: String) {
+        if isFrom {
+            viewModel.currencyModel.fromCurrency = selectedCurrency
+            fromCurrencyButton.setTitle(selectedCurrency, for: .normal)
+        } else {
+            viewModel.currencyModel.toCurrency = selectedCurrency
+            toCurrencyButton.setTitle(selectedCurrency, for: .normal)
+        }
+        if viewModel.currencyModel.fromCurrency != nil && viewModel.currencyModel.toCurrency != nil {
+            //call convert api
+        }
     }
 }
