@@ -13,6 +13,15 @@ import UIKit
 extension DetailViewController {
     
     func bindTableViewData() {
+        bindHistoricalTableView()
+        if viewModel.baseCurrency == nil {
+            otherCurrencyBGView.isHidden = true
+        } else {
+            bindOtherCurrenciesTableView()
+        }
+    }
+    
+    private func bindHistoricalTableView() {
         viewModel.savedCurrencies.asObservable().bind(
             to: tableView.rx.items
         ) { (tableView, row, item) -> UITableViewCell in
@@ -31,5 +40,20 @@ extension DetailViewController {
             }
         }.disposed(by: disposeBag)
         viewModel.getCoreData()
+    }
+    
+    private func bindOtherCurrenciesTableView() {
+        viewModel.otherCurrencies.asObservable().bind(
+            to: otherCurrencytableView.rx.items
+        ) { (tableView, row, item) -> UITableViewCell in
+            let cell = tableView.dequeueReusableCell(withIdentifier: "\(DetailTableViewCell.self)", for: IndexPath(row: row, section: 0)) as! DetailTableViewCell
+            let fromCurrency = item.fromCurrency ?? ""
+            let toCurrency = item.toCurrency ?? ""
+            let rate = String(format: "%.2f", item.rate ?? 0.0)
+            cell.currencyLabel.text = "\(fromCurrency) - \(toCurrency)  --  \(rate)"
+            
+            return cell
+        }.disposed(by: disposeBag)
+        viewModel.getOtherCurrenciesWebService()
     }
 }

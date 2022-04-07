@@ -17,6 +17,7 @@ struct ButtonTitle {
     static let cancel = "Cancel"
     static let today = "Today"
     static let yesterday = "Yesterday"
+    static let from = "From"
 }
 
 struct StaticLabel {

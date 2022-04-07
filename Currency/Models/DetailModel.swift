@@ -30,4 +30,12 @@ struct DetailModel {
         rate = nil
         isNoDataFound = true
     }
+    
+    init(from: String, to: String, value: Double) {
+        fromCurrency = from
+        toCurrency = to
+        rate = value
+        date = nil
+        isNoDataFound = nil
+    }
 }

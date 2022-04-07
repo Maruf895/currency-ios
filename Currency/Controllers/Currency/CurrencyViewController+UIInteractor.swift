@@ -49,6 +49,9 @@ extension CurrencyViewController {
     
     private func handleDetailClick() {
         let controller = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        if fromCurrencyButton.titleLabel?.text != ButtonTitle.from {
+            controller.viewModel.baseCurrency = fromCurrencyButton.titleLabel?.text
+        }
         
         navigationController?.pushViewController(controller, animated: true)
     }

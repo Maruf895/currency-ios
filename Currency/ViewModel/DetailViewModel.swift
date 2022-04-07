@@ -13,6 +13,8 @@ import CoreData
 class DetailViewModel {
     
     var savedCurrencies = BehaviorRelay<[DetailModel]>(value: [DetailModel]())
+    var otherCurrencies = BehaviorRelay<[DetailModel]>(value: [DetailModel]())
+    var baseCurrency: String?
     
     func getCoreData(_ date: Date = Date()) {
         let context = AppDelegate.getContext()
@@ -52,7 +54,7 @@ class DetailViewModel {
         return datePredicate
     }
     
-    func getCurrencyDetails(currencies: [CurrencySearched], date: Date) {
+    private func getCurrencyDetails(currencies: [CurrencySearched], date: Date) {
         let fromCurrency = currencies.map { $0.fromCurrency ?? "" }
         let toCurrency = currencies.map { $0.toCurrency ?? "" }
         let allCurrency = Array(Set(fromCurrency + toCurrency))
@@ -68,7 +70,7 @@ class DetailViewModel {
             switch result {
             case .success(let data):
                 if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] {
-                    print(json)
+                    
                     self.handleCurrencyDetail(model: CurrencyConvertModel(json), currencies: currencies)
                 }
             case .failure(let error):
@@ -89,5 +91,39 @@ class DetailViewModel {
         }
         
         savedCurrencies.accept(dataModel)
+    }
+    
+    func getOtherCurrenciesWebService() {
+        // TODO: taking top 10 currencies static
+        let param = [
+            "symbols": "USD, EUR, GBP, INR, CHF, KWD, BHD, OMR, JOD, GIP, KYD"
+        ]
+        NetworkManager.shared.callWebService(
+            .latest,
+            parameters: param
+        ) { [weak self] (result) in
+            guard let `self` = self else { return }
+            
+            switch result {
+            case .success(let data):
+                if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] {
+                    self.handleOtherCurrencies(CurrencyConvertModel(json))
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+                self.otherCurrencies.accept([DetailModel(true)])
+            }
+        }
+    }
+    
+    private func handleOtherCurrencies(_ model: CurrencyConvertModel) {
+        var dataModel = [DetailModel]()
+        let fromRate = model.rates[baseCurrency ?? ""] ?? 0.0
+        for item in model.rates {
+            let toRate = item.value
+            let convertedRate = (1 / fromRate) * toRate
+            dataModel.append(DetailModel(from: baseCurrency ?? "", to: item.key, value: convertedRate))
+        }
+        otherCurrencies.accept(dataModel)
     }
 }

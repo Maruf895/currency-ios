@@ -18,6 +18,14 @@ class DetailViewController: UIViewController {
             tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         }
     }
+    @IBOutlet weak var otherCurrencytableView: UITableView! {
+        didSet {
+            otherCurrencytableView.register(
+                UINib(nibName: "\(DetailTableViewCell.self)", bundle: nil), forCellReuseIdentifier: "\(DetailTableViewCell.self)"
+            )
+        }
+    }
+    @IBOutlet weak var otherCurrencyBGView: UIView!
     @IBOutlet weak var dateButton: UIButton!
     
     var viewModel = DetailViewModel()

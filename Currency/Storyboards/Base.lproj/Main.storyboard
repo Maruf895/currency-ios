@@ -205,6 +205,30 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wEd-SQ-hyI">
                                         <rect key="frame" x="207" y="0.0" width="207" height="594"/>
+                                        <subviews>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="puC-0e-S3a">
+                                                <rect key="frame" x="0.0" y="51" width="207" height="543"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </tableView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other Currencies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTA-VC-lkC">
+                                                <rect key="frame" x="8" y="8" width="191" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="7eI-NE-f8G"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="GTA-VC-lkC" firstAttribute="leading" secondItem="wEd-SQ-hyI" secondAttribute="leading" constant="8" id="KEu-rg-bvB"/>
+                                            <constraint firstAttribute="bottom" secondItem="puC-0e-S3a" secondAttribute="bottom" id="T2t-2W-m4z"/>
+                                            <constraint firstItem="puC-0e-S3a" firstAttribute="leading" secondItem="wEd-SQ-hyI" secondAttribute="leading" id="TtT-Aq-uXe"/>
+                                            <constraint firstAttribute="trailing" secondItem="puC-0e-S3a" secondAttribute="trailing" id="kul-Q8-MMt"/>
+                                            <constraint firstItem="GTA-VC-lkC" firstAttribute="top" secondItem="wEd-SQ-hyI" secondAttribute="top" constant="8" id="o6b-qy-BnU"/>
+                                            <constraint firstItem="puC-0e-S3a" firstAttribute="top" secondItem="GTA-VC-lkC" secondAttribute="bottom" constant="8" id="pSp-2k-MXL"/>
+                                            <constraint firstAttribute="trailing" secondItem="GTA-VC-lkC" secondAttribute="trailing" constant="8" id="qZd-PE-I7d"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -224,6 +248,8 @@
                     </view>
                     <connections>
                         <outlet property="dateButton" destination="Myz-nG-Too" id="74j-Ci-Jg6"/>
+                        <outlet property="otherCurrencyBGView" destination="wEd-SQ-hyI" id="zhe-hn-9yR"/>
+                        <outlet property="otherCurrencytableView" destination="puC-0e-S3a" id="KGs-hQ-DzN"/>
                         <outlet property="tableView" destination="PCQ-Sa-Nlg" id="xkd-U0-ohD"/>
                     </connections>
                 </viewController>
