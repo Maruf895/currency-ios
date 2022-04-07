@@ -9,4 +9,5 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
 }
