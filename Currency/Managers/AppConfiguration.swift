@@ -11,6 +11,6 @@ class AppConfiguration {
     
     private init() { }
     
-    static let apiKey = "6b37549da14c911aef54f8ab41975c5e"
+    static let apiKey = "2d2260fc2fc2ebdf9f63c14259ca9cf6"
     static let baseUrl = "http://data.fixer.io/api/"
 }
