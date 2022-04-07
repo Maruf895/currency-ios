@@ -78,7 +78,6 @@ extension CurrencyViewController {
             toCurrencyButton.setTitle(selectedCurrency, for: .normal)
         }
         if viewModel.currencyModel.fromCurrency != nil && viewModel.currencyModel.toCurrency != nil {
-            saveCurrenciesToCoreData()
             showLoader()
             viewModel.getConvertedCurrency { [weak self] errorMessage in
                 guard let `self` = self else { return }

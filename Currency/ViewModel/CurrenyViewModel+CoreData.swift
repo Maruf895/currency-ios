@@ -6,10 +6,9 @@
 //
 
 import Foundation
-import UIKit
 import CoreData
 
-extension CurrencyViewController {
+extension CurrenyViewModel {
     
     func saveCurrenciesToCoreData() {
         let context = AppDelegate.getContext()
@@ -19,19 +18,18 @@ extension CurrencyViewController {
                 into: context
             ) as! CurrencySearched
             
-            currencySearched.fromCurrency = viewModel.currencyModel.fromCurrency
-            currencySearched.toCurrency = viewModel.currencyModel.toCurrency
+            currencySearched.fromCurrency = currencyModel.fromCurrency
+            currencySearched.toCurrency = currencyModel.toCurrency
             currencySearched.date = Date()
             
-            do {
-                try context.save()
-            } catch let err {
-                alert(message: err.localizedDescription)
-            }
+            try? context.save()
         }
     }
     
     func isCurrenciesAlreadySaved() -> Bool {
+        if currencyModel.fromCurrency == nil || currencyModel.toCurrency == nil {
+            return true
+        }
         let context = AppDelegate.getContext()
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "\(CurrencySearched.self)")
         request.returnsObjectsAsFaults = false
@@ -40,8 +38,8 @@ extension CurrencyViewController {
         do {
             let currencySearched = try context.fetch(request) as? [CurrencySearched]
             return !(currencySearched?.isEmpty ?? true)
-        } catch let err {
-            alert(message: err.localizedDescription)
+        } catch {
+            print("Error")
         }
         return false
     }
@@ -58,8 +56,8 @@ extension CurrencyViewController {
         // Set predicate as date being today's date
         let fromPredicate = NSPredicate(format: "date >= %@", dateFrom as NSDate)
         let toPredicate = NSPredicate(format: "date < %@",  dateTo as NSDate)
-        let fromCurrencyPredicate = NSPredicate(format: "fromCurrency == %@",  viewModel.currencyModel.fromCurrency ?? "")
-        let toCurrencyPredicate = NSPredicate(format: "toCurrency == %@",  viewModel.currencyModel.toCurrency ?? "")
+        let fromCurrencyPredicate = NSPredicate(format: "fromCurrency == %@",  currencyModel.fromCurrency ?? "")
+        let toCurrencyPredicate = NSPredicate(format: "toCurrency == %@",  currencyModel.toCurrency ?? "")
         let datePredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [
             fromPredicate, toPredicate, fromCurrencyPredicate, toCurrencyPredicate
         ])

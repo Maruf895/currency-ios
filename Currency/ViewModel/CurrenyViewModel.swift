@@ -32,6 +32,7 @@ class CurrenyViewModel {
         let param = [
             "symbols": "\(currencyModel.fromCurrency ?? ""),\(currencyModel.toCurrency ?? "")"
         ]
+        saveCurrenciesToCoreData()
         NetworkManager.shared.callWebService(.latest, parameters: param) { [weak self] (result) in
             guard let `self` = self else { return }
             

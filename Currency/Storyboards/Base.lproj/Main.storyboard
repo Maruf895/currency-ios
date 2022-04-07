@@ -168,6 +168,19 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R98-9J-wqA">
                                 <rect key="frame" x="0.0" y="44" width="414" height="224"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GRAPH AREA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dnf-tY-TDv">
+                                        <rect key="frame" x="143.5" y="100" width="127" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <constraints>
+                                    <constraint firstItem="Dnf-tY-TDv" firstAttribute="centerX" secondItem="R98-9J-wqA" secondAttribute="centerX" id="Gqn-pc-JyM"/>
+                                    <constraint firstItem="Dnf-tY-TDv" firstAttribute="centerY" secondItem="R98-9J-wqA" secondAttribute="centerY" id="kRk-mq-V2A"/>
+                                </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="tzy-bO-guK">
                                 <rect key="frame" x="0.0" y="268" width="414" height="594"/>
@@ -179,13 +192,13 @@
                                                 <rect key="frame" x="0.0" y="51" width="207" height="543"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </tableView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Myz-nG-Too">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Myz-nG-Too">
                                                 <rect key="frame" x="8" y="8" width="191" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="vYi-U1-zAH"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="drowdown" imagePlacement="trailing" title="Today" imagePadding="5">
+                                                <buttonConfiguration key="configuration" style="plain" image="drowdown" imagePlacement="trailing" title="Today" imagePadding="8">
                                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 </buttonConfiguration>
                                                 <connections>
@@ -284,6 +297,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
