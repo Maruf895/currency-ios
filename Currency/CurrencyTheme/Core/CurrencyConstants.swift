@@ -15,4 +15,10 @@ struct Alerts {
 struct ButtonTitle {
     static let settings = "Settings"
     static let cancel = "Cancel"
+    static let today = "Today"
+    static let yesterday = "Yesterday"
+}
+
+struct StaticLabel {
+    static let noDataFound = "No Data Found"
 }

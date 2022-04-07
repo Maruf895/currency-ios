@@ -12,10 +12,11 @@ import CoreData
 extension CurrencyViewController {
     
     func saveCurrenciesToCoreData() {
+        let context = AppDelegate.getContext()
         if !isCurrenciesAlreadySaved() {
             let currencySearched = NSEntityDescription.insertNewObject(
                 forEntityName: "\(CurrencySearched.self)",
-                into: getContext()
+                into: context
             ) as! CurrencySearched
             
             currencySearched.fromCurrency = viewModel.currencyModel.fromCurrency
@@ -23,7 +24,7 @@ extension CurrencyViewController {
             currencySearched.date = Date()
             
             do {
-                try getContext().save()
+                try context.save()
             } catch let err {
                 alert(message: err.localizedDescription)
             }
@@ -31,25 +32,20 @@ extension CurrencyViewController {
     }
     
     func isCurrenciesAlreadySaved() -> Bool {
+        let context = AppDelegate.getContext()
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "\(CurrencySearched.self)")
         request.returnsObjectsAsFaults = false
         
         request.predicate = getDatePredicate()
         do {
-            let currencySearched = try getContext().fetch(request) as? [CurrencySearched]
+            let currencySearched = try context.fetch(request) as? [CurrencySearched]
             return !(currencySearched?.isEmpty ?? true)
         } catch let err {
             alert(message: err.localizedDescription)
         }
         return false
     }
-    
-    private func getContext() -> NSManagedObjectContext {
-        let delegate = UIApplication.shared.delegate as! AppDelegate
         
-        return delegate.persistentContainer.viewContext
-    }
-    
     private func getDatePredicate() -> NSPredicate {
         // Get the current calendar with local time zone
         var calendar = Calendar.current

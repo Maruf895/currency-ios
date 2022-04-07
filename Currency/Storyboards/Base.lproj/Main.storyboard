@@ -175,16 +175,32 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y8B-1J-phg">
                                         <rect key="frame" x="0.0" y="0.0" width="207" height="594"/>
                                         <subviews>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PCQ-Sa-Nlg">
-                                                <rect key="frame" x="0.0" y="0.0" width="207" height="594"/>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PCQ-Sa-Nlg">
+                                                <rect key="frame" x="0.0" y="51" width="207" height="543"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </tableView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Myz-nG-Too">
+                                                <rect key="frame" x="8" y="8" width="191" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="vYi-U1-zAH"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="drowdown" imagePlacement="trailing" title="Today" imagePadding="5">
+                                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="dateSelectionAction:" destination="Uov-8P-LJj" eventType="touchUpInside" id="Dfl-em-JNr"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="PCQ-Sa-Nlg" secondAttribute="bottom" id="VQn-Vr-m7R"/>
                                             <constraint firstAttribute="trailing" secondItem="PCQ-Sa-Nlg" secondAttribute="trailing" id="YZY-tH-7vF"/>
-                                            <constraint firstItem="PCQ-Sa-Nlg" firstAttribute="top" secondItem="y8B-1J-phg" secondAttribute="top" id="g2L-15-Zrg"/>
+                                            <constraint firstAttribute="trailing" secondItem="Myz-nG-Too" secondAttribute="trailing" constant="8" id="gD7-C6-mjF"/>
+                                            <constraint firstItem="Myz-nG-Too" firstAttribute="top" secondItem="y8B-1J-phg" secondAttribute="top" constant="8" id="kl2-EV-LLt"/>
+                                            <constraint firstItem="Myz-nG-Too" firstAttribute="leading" secondItem="y8B-1J-phg" secondAttribute="leading" constant="8" id="q7H-H7-HXq"/>
                                             <constraint firstItem="PCQ-Sa-Nlg" firstAttribute="leading" secondItem="y8B-1J-phg" secondAttribute="leading" id="qoy-wq-32x"/>
+                                            <constraint firstItem="PCQ-Sa-Nlg" firstAttribute="top" secondItem="Myz-nG-Too" secondAttribute="bottom" constant="8" id="r10-Ri-WJy"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wEd-SQ-hyI">
@@ -207,6 +223,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dateButton" destination="Myz-nG-Too" id="74j-Ci-Jg6"/>
                         <outlet property="tableView" destination="PCQ-Sa-Nlg" id="xkd-U0-ohD"/>
                     </connections>
                 </viewController>
@@ -234,6 +251,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="drowdown" width="11.666666984558105" height="11.666666984558105"/>
         <image name="swap" width="40" height="40"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

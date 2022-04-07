@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		A518261627FEB40400363C3A /* CurrencyViewControlller+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518261527FEB40400363C3A /* CurrencyViewControlller+CoreData.swift */; };
+		A518261827FEC38400363C3A /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518261727FEC38400363C3A /* DetailViewModel.swift */; };
+		A518261A27FEC48B00363C3A /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518261927FEC48B00363C3A /* DetailModel.swift */; };
+		A518261C27FEC6AE00363C3A /* DetailViewController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518261B27FEC6AE00363C3A /* DetailViewController+UITableView.swift */; };
+		A518262027FEC7CF00363C3A /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518261E27FEC7CF00363C3A /* DetailTableViewCell.swift */; };
+		A518262127FEC7CF00363C3A /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A518261F27FEC7CF00363C3A /* DetailTableViewCell.xib */; };
+		A518262327FED2DF00363C3A /* DetailViewController+UIInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518262227FED2DF00363C3A /* DetailViewController+UIInteractor.swift */; };
+		A518262527FED4F000363C3A /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518262427FED4F000363C3A /* DateFormatter.swift */; };
 		A51FF42227FE4CEC00EF7AF1 /* CurrencyDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A51FF42027FE4CEC00EF7AF1 /* CurrencyDB.xcdatamodeld */; };
 		A5BCDDAB27FCD85C002E121F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCDDAA27FCD85C002E121F /* AppDelegate.swift */; };
 		A5BCDDAD27FCD85C002E121F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BCDDAC27FCD85C002E121F /* SceneDelegate.swift */; };
@@ -54,6 +61,13 @@
 
 /* Begin PBXFileReference section */
 		A518261527FEB40400363C3A /* CurrencyViewControlller+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrencyViewControlller+CoreData.swift"; sourceTree = "<group>"; };
+		A518261727FEC38400363C3A /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		A518261927FEC48B00363C3A /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
+		A518261B27FEC6AE00363C3A /* DetailViewController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+UITableView.swift"; sourceTree = "<group>"; };
+		A518261E27FEC7CF00363C3A /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		A518261F27FEC7CF00363C3A /* DetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
+		A518262227FED2DF00363C3A /* DetailViewController+UIInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+UIInteractor.swift"; sourceTree = "<group>"; };
+		A518262427FED4F000363C3A /* DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		A51FF42127FE4CEC00EF7AF1 /* CurrencyDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CurrencyDB.xcdatamodel; sourceTree = "<group>"; };
 		A5BCDDA727FCD85C002E121F /* Currency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Currency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5BCDDAA27FCD85C002E121F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +124,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A518261D27FEC7B600363C3A /* DetailTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A518261E27FEC7CF00363C3A /* DetailTableViewCell.swift */,
+				A518261F27FEC7CF00363C3A /* DetailTableViewCell.xib */,
+			);
+			path = DetailTableViewCell;
+			sourceTree = "<group>";
+		};
 		A5BCDD9E27FCD85C002E121F = {
 			isa = PBXGroup;
 			children = (
@@ -210,7 +233,10 @@
 		A5D5C98427FD791B00F403DB /* DetailViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A518261D27FEC7B600363C3A /* DetailTableViewCell */,
 				A5D5C98527FD791B00F403DB /* DetailViewController.swift */,
+				A518261B27FEC6AE00363C3A /* DetailViewController+UITableView.swift */,
+				A518262227FED2DF00363C3A /* DetailViewController+UIInteractor.swift */,
 			);
 			path = DetailViewController;
 			sourceTree = "<group>";
@@ -242,6 +268,7 @@
 				A5D5C9A227FD875500F403DB /* UIViewController+Alert.swift */,
 				A5D5C99027FD7B4C00F403DB /* ORDesinables.swift */,
 				A5D5C9A427FD878200F403DB /* CurrencyConstants.swift */,
+				A518262427FED4F000363C3A /* DateFormatter.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -268,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				A5D5C99B27FD7BAD00F403DB /* CurrenyViewModel.swift */,
+				A518261727FEC38400363C3A /* DetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -276,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				A5D5C99E27FD81B900F403DB /* CurrencyModel.swift */,
+				A518261927FEC48B00363C3A /* DetailModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -392,6 +421,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5D5C99627FD7B4C00F403DB /* PickerView.xib in Resources */,
+				A518262127FEC7CF00363C3A /* DetailTableViewCell.xib in Resources */,
 				A5BCDDB727FCD85C002E121F /* LaunchScreen.storyboard in Resources */,
 				A5BCDDB427FCD85C002E121F /* Assets.xcassets in Resources */,
 				A5BCDDB227FCD85C002E121F /* Main.storyboard in Resources */,
@@ -421,17 +451,23 @@
 			files = (
 				A51FF42227FE4CEC00EF7AF1 /* CurrencyDB.xcdatamodeld in Sources */,
 				A5D5C99927FD7B8300F403DB /* NetworkManager.swift in Sources */,
+				A518262327FED2DF00363C3A /* DetailViewController+UIInteractor.swift in Sources */,
 				A518261627FEB40400363C3A /* CurrencyViewControlller+CoreData.swift in Sources */,
 				A5D5C98A27FD791B00F403DB /* DetailViewController.swift in Sources */,
 				A5D5C98C27FD791B00F403DB /* CurrencyViewController+PrivateMethods.swift in Sources */,
 				A5D5C9A327FD875500F403DB /* UIViewController+Alert.swift in Sources */,
+				A518262527FED4F000363C3A /* DateFormatter.swift in Sources */,
+				A518261A27FEC48B00363C3A /* DetailModel.swift in Sources */,
 				A5D5C98B27FD791B00F403DB /* CurrencyViewController.swift in Sources */,
 				A5BCDDAB27FCD85C002E121F /* AppDelegate.swift in Sources */,
+				A518262027FEC7CF00363C3A /* DetailTableViewCell.swift in Sources */,
 				A5D5C99527FD7B4C00F403DB /* PickerView.swift in Sources */,
 				A5D5C9A127FD829900F403DB /* AppConfiguration.swift in Sources */,
 				A5D5C99F27FD81B900F403DB /* CurrencyModel.swift in Sources */,
 				A5D5C9A727FDC09300F403DB /* CurrencyViewController+UITextField.swift in Sources */,
 				A5D5C99427FD7B4C00F403DB /* ORDesinables.swift in Sources */,
+				A518261827FEC38400363C3A /* DetailViewModel.swift in Sources */,
+				A518261C27FEC6AE00363C3A /* DetailViewController+UITableView.swift in Sources */,
 				A5D5C9A527FD878200F403DB /* CurrencyConstants.swift in Sources */,
 				A5D5C99C27FD7BAD00F403DB /* CurrenyViewModel.swift in Sources */,
 				A5D5C98D27FD791B00F403DB /* CurrencyViewController+UIInteractor.swift in Sources */,
