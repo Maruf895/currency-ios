@@ -19,7 +19,9 @@ extension CurrencyViewController {
             DispatchQueue.main.async {
                 self.dismiss(animated: true)
                 if !errorMessage.isEmpty {
-                    self.alert(message: errorMessage)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        self.alert(message: errorMessage)
+                    }
                 }
             }
         }

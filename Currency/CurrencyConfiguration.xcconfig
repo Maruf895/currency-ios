@@ -1,0 +1,12 @@
+//
+//  CurrencyConfiguration.xcconfig
+//  Currency
+//
+//  Created by Mohd Maruf on 08/04/22.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+BACKEND_URL = http:\/\/data.fixer.io/api/
+API_KEY = 2d2260fc2fc2ebdf9f63c14259ca9cf6

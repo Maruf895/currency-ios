@@ -1,46 +1,6 @@
 import Foundation
 import UIKit
 
-@IBDesignable
-open class ORDesignableView: UIView {
-}
-
-@IBDesignable
-open class ORDesignableButton: UIButton {
-}
-
-@IBDesignable
-class ORDesignableTextField: UITextField {
-    
-    @IBInspectable var placeHolderColor: UIColor? {
-        get {
-            return self.placeHolderColor
-        }
-
-        set {
-            self.attributedPlaceholder = NSAttributedString(string: self.placeholder != nil ? self.placeholder! : "", attributes: [NSAttributedString.Key.foregroundColor: newValue!])
-        }
-    }
-    
-    @IBInspectable var padding: CGFloat = 0
-    
-    override func textRect(forBounds bounds: CGRect) -> CGRect {
-        return CGRect(x: bounds.origin.x + padding, y: bounds.origin.y, width: bounds.width, height: bounds.height)
-    }
-    
-    override func editingRect(forBounds bounds: CGRect) -> CGRect {
-        return CGRect(x: bounds.origin.x + padding, y: bounds.origin.y, width: bounds.width, height: bounds.height)
-    }
-}
-
-@IBDesignable
-class ORDesignableLabel: UILabel {
-}
-
-@IBDesignable
-class ORDesignableImageView: UIImageView {
-}
-
 extension UIView {
     
     @IBInspectable

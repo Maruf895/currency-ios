@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import Charts
 
 class DetailViewController: UIViewController {
     
@@ -25,6 +26,7 @@ class DetailViewController: UIViewController {
             )
         }
     }
+    @IBOutlet weak var chartView: BarChartView!
     @IBOutlet weak var otherCurrencyBGView: UIView!
     @IBOutlet weak var dateButton: UIButton!
     

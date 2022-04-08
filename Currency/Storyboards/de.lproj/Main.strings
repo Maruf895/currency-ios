@@ -1,0 +1,36 @@
+
+/* Class = "UIButton"; configuration.title = "Details"; ObjectID = "6hx-cD-Az3"; */
+"6hx-cD-Az3.configuration.title" = "Details";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "6hx-cD-Az3"; */
+"6hx-cD-Az3.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "From"; ObjectID = "AOk-J6-yYR"; */
+"AOk-J6-yYR.configuration.title" = "From";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "AOk-J6-yYR"; */
+"AOk-J6-yYR.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Other Currencies"; ObjectID = "GTA-VC-lkC"; */
+"GTA-VC-lkC.text" = "Other Currencies";
+
+/* Class = "UIButton"; configuration.title = "Today"; ObjectID = "Myz-nG-Too"; */
+"Myz-nG-Too.configuration.title" = "Today";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Myz-nG-Too"; */
+"Myz-nG-Too.normalTitle" = "Button";
+
+/* Class = "UIViewController"; title = "Detail"; ObjectID = "Uov-8P-LJj"; */
+"Uov-8P-LJj.title" = "Detail";
+
+/* Class = "UINavigationItem"; title = "Currency"; ObjectID = "lSh-3D-t9x"; */
+"lSh-3D-t9x.title" = "Currency";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "r2Y-hE-fkI"; */
+"r2Y-hE-fkI.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "To"; ObjectID = "sOY-ZW-DSD"; */
+"sOY-ZW-DSD.configuration.title" = "To";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "sOY-ZW-DSD"; */
+"sOY-ZW-DSD.normalTitle" = "Button";

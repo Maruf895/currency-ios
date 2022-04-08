@@ -11,6 +11,6 @@ class AppConfiguration {
     
     private init() { }
     
-    static let apiKey = "2d2260fc2fc2ebdf9f63c14259ca9cf6"
-    static let baseUrl = "http://data.fixer.io/api/"
+    static let apiKey = Bundle.main.infoDictionary?["ApiKey"] as? String ?? ""
+    static let baseUrl = (Bundle.main.infoDictionary?["BaseUrl"] as? String ?? "").replacingOccurrences(of: "\\", with: "")
 }

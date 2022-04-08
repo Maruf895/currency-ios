@@ -54,7 +54,7 @@ class PickerView: UIView {
         }
         dataBlock = completion
         frame = UIScreen.main.bounds
-        UIApplication.shared.windows.last?.addSubview(self)
+        UIApplication.shared.keyWindow?.addSubview(self)
     }
     
     func showDatePicker(_ minimumDate: Date = Date(), selectedDate: Date = Date(), datePickerMode: UIDatePicker.Mode, completion: @escaping (Any?) -> Void) {
@@ -67,7 +67,7 @@ class PickerView: UIView {
         datePicker.setDate(selectedDate, animated: false)
         dataBlock = completion
         frame = UIScreen.main.bounds
-        UIApplication.shared.windows.last?.addSubview(self)
+        UIApplication.shared.keyWindow?.addSubview(self)
     }
     
     func remove(_ view: UIView?) {

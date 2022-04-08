@@ -169,17 +169,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R98-9J-wqA">
                                 <rect key="frame" x="0.0" y="44" width="414" height="224"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GRAPH AREA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dnf-tY-TDv">
-                                        <rect key="frame" x="143.5" y="100" width="127" height="24"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kyS-oE-dh3" customClass="BarChartView" customModule="Charts">
+                                        <rect key="frame" x="12" y="12" width="390" height="200"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <constraints>
-                                    <constraint firstItem="Dnf-tY-TDv" firstAttribute="centerX" secondItem="R98-9J-wqA" secondAttribute="centerX" id="Gqn-pc-JyM"/>
-                                    <constraint firstItem="Dnf-tY-TDv" firstAttribute="centerY" secondItem="R98-9J-wqA" secondAttribute="centerY" id="kRk-mq-V2A"/>
+                                    <constraint firstItem="kyS-oE-dh3" firstAttribute="top" secondItem="R98-9J-wqA" secondAttribute="top" constant="12" id="6aO-61-lko"/>
+                                    <constraint firstAttribute="trailing" secondItem="kyS-oE-dh3" secondAttribute="trailing" constant="12" id="SZO-1c-5M9"/>
+                                    <constraint firstAttribute="bottom" secondItem="kyS-oE-dh3" secondAttribute="bottom" constant="12" id="YAf-tQ-dsv"/>
+                                    <constraint firstItem="kyS-oE-dh3" firstAttribute="leading" secondItem="R98-9J-wqA" secondAttribute="leading" constant="12" id="tcs-ee-7YR"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="tzy-bO-guK">
@@ -260,6 +259,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="chartView" destination="kyS-oE-dh3" id="0Hf-Dw-f27"/>
                         <outlet property="dateButton" destination="Myz-nG-Too" id="74j-Ci-Jg6"/>
                         <outlet property="otherCurrencyBGView" destination="wEd-SQ-hyI" id="zhe-hn-9yR"/>
                         <outlet property="otherCurrencytableView" destination="puC-0e-S3a" id="KGs-hQ-DzN"/>
@@ -297,9 +297,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
